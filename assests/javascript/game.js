@@ -18,8 +18,16 @@ var wins = 0;
 var loses = 0;
 var guessesRemaining = 5;
 var lettersGuessed = [];
-
+var wordSelected;
+var dashes;
+var emptyWord;
 //press any key to get started 
 document.onkeyup = function (event){
-    
+    wordSelected = wordOptions[Math.floor(Math.random() * wordOptions.length)]; //selects a word from the list
+    console.log("Word selected is: " + wordSelected); //displays word in console
+    for (var i = 0; i < wordSelected.length; i++){
+        // wordSelected[i] = "_ "
+        dashes = dashes + "_ "
+        document.getElementById("wordSelected").textContent = dashes;
+    }    
 }
